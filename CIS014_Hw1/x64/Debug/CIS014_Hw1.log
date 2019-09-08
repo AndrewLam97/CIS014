@@ -1,0 +1,7 @@
+﻿  CIS014_Hw1.cpp
+C:\Users\Andrew\Downloads\Penny-Converter-master\Penny-Converter-master\CIS014_Hw1\CIS014_Hw1.cpp(11,29): warning C4305:  'initializing': truncation from 'double' to 'float'
+C:\Users\Andrew\Downloads\Penny-Converter-master\Penny-Converter-master\CIS014_Hw1\CIS014_Hw1.cpp(29,18): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\Downloads\Penny-Converter-master\Penny-Converter-master\CIS014_Hw1\CIS014_Hw1.cpp(30,19): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\Downloads\Penny-Converter-master\Penny-Converter-master\CIS014_Hw1\CIS014_Hw1.cpp(32,16): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\Downloads\Penny-Converter-master\Penny-Converter-master\CIS014_Hw1\CIS014_Hw1.cpp(33,18): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+  CIS014_Hw1.vcxproj -> C:\Users\Andrew\Downloads\Penny-Converter-master\Penny-Converter-master\CIS014_Hw1\x64\Debug\CIS014_Hw1.exe
