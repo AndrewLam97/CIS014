@@ -1,0 +1,6 @@
+﻿  CIS014_Hw2.cpp
+C:\Users\Andrew\source\repos\CIS014_Hw2\CIS014_Hw2\CIS014_Hw2.cpp(29,18): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\source\repos\CIS014_Hw2\CIS014_Hw2\CIS014_Hw2.cpp(30,19): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\source\repos\CIS014_Hw2\CIS014_Hw2\CIS014_Hw2.cpp(32,16): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\source\repos\CIS014_Hw2\CIS014_Hw2\CIS014_Hw2.cpp(33,18): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+  CIS014_Hw2.vcxproj -> C:\Users\Andrew\source\repos\CIS014_Hw2\Debug\CIS014_Hw2.exe
