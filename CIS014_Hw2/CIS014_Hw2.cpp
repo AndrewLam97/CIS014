@@ -15,7 +15,6 @@
 #include <iostream>
 using namespace std;
 #include <string>
-#include <string>
 #include <math.h>
 
 
@@ -36,12 +35,10 @@ string breakCash(int numPennies) {
 		numPennies -= (numDimes * 10) + (numNickels * 5);
 	}
 
-	//string result = "In US currency you have " + std::to_string(dollars) + " dollar(s), " + std::to_string(quarters) + " quarter(s), " + std::to_string(dimes) + " dime(s), " + std::to_string(nickels) + " nickel(s), and " + std::to_string(numPennies) + " pennies. \n";
 	char result[150];
-	sprintf_s(result, "In US currency you have: %d dollar(s), %d quarter(s), %d dime(s), %d nickel(s), and %d pennies. \nIn CAD you have %.2f dollars. \n", numDollars, numQuarters, numDimes, numNickels, numPennies, numCad);
+	sprintf_s(result, "In US currency you have: %d dollar(s), %d quarter(s), %d dime(s), %d nickel(s), and %d pennies. \nIn Canadian currency you have %.2f dollars. \n", numDollars, numQuarters, numDimes, numNickels, numPennies, numCad);
 
 	return result;
-
 }
 
 int main()

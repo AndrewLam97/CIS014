@@ -1,7 +1,0 @@
-﻿  CIS014_Hw1.cpp
-C:\Users\alam58\Desktop\CIS014\CIS014_Hw1\CIS014_Hw1.cpp(19,12): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\alam58\Desktop\CIS014\CIS014_Hw1\CIS014_Hw1.cpp(22,18): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\alam58\Desktop\CIS014\CIS014_Hw1\CIS014_Hw1.cpp(23,19): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\alam58\Desktop\CIS014\CIS014_Hw1\CIS014_Hw1.cpp(25,16): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\alam58\Desktop\CIS014\CIS014_Hw1\CIS014_Hw1.cpp(26,18): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-  CIS014_Hw1.vcxproj -> C:\Users\alam58\Desktop\CIS014\CIS014_Hw1\Debug\CIS014_Hw1.exe
