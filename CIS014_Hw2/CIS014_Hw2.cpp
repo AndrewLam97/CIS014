@@ -47,5 +47,6 @@ int main()
 	int numPennies = 0;
 	cout << "Please enter all your pennies: ";
 	cin >> numPennies;
+	cout << "You entered pennies";
 	cout << breakCash(numPennies);
 }
