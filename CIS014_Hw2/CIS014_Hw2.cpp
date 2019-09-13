@@ -1,5 +1,5 @@
 /**
- * CIS014_Hw2.1	Andrew Lam 9-7-19 
+ * CIS014_Hw2.1	Andrew Lam 9-7-19
 
  * FUNCTION NAME: breakCash
  * PURPOSE: the function takes in the total of pennies from the user as input, computes its equivalent in
@@ -20,23 +20,25 @@ using namespace std;
 
 
 string breakCash(int numPennies) {
-	int dollars = 0,
-		quarters = 0, 
-		dimes = 0, 
-		nickels = 0;
+	int numDollars = 0,
+		numQuarters = 0,
+		numDimes = 0,
+		numNickels = 0;
 
 	while (numPennies > 5) {
-		dollars = floor(numPennies / 100);
-		quarters = floor((numPennies % 100) / 25);
-		numPennies -= (dollars * 100) + (quarters * 25);
-		dimes = floor(numPennies / 10);
-		nickels = floor((numPennies % 10) / 5);
-		numPennies -= (dimes * 10) + (nickels * 5);
+		numDollars = floor(numPennies / 100);
+		numQuarters = floor((numPennies % 100) / 25);
+		numPennies -= (numDollars * 100) + (numQuarters * 25);
+		numDimes = floor(numPennies / 10);
+		numNickels = floor((numPennies % 10) / 5);
+		numPennies -= (numDimes * 10) + (numNickels * 5);
 	}
-	
-	string result = "In US currency you have " + std::to_string(dollars) + " dollar(s), " + std::to_string(quarters) + " quarter(s), " + std::to_string(dimes) + " dime(s), " + std::to_string(nickels) + " nickel(s), and " + std::to_string(numPennies) + " pennie(s). \n";
 
-	return result;	
+	//string result = "In US currency you have " + std::to_string(dollars) + " dollar(s), " + std::to_string(quarters) + " quarter(s), " + std::to_string(dimes) + " dime(s), " + std::to_string(nickels) + " nickel(s), and " + std::to_string(numPennies) + " pennies. \n";
+	char result[100];
+	sprintf_s(result, "In US currency you have: %d dollar(s), %d quarter(s), %d dime(s), %d nickel(s), and %d pennies. \n", numDollars, numQuarters, numDimes, numNickels, numPennies);
+
+	return result;
 
 }
 
