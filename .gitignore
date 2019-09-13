@@ -422,23 +422,6 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/eclipse,visualstudio
-CIS014_Hw2/.vs/CIS014_Hw2/v16/.suo
+
 CIS014_Hw2/.vs/CIS014_Hw2/v16/Browse.VC.db
-CIS014_Hw2/x64/Debug/CIS014_Hw2.exe
-CIS014_Hw2/x64/Debug/CIS014_Hw2.ilk
-CIS014_Hw2/x64/Debug/CIS014_Hw2.log
-CIS014_Hw2/x64/Debug/CIS014_Hw2.obj
-CIS014_Hw2/x64/Debug/CIS014_Hw2.pdb
-CIS014_Hw2/x64/Debug/CIS014_Hw2.tlog/link.write.1.tlog
-CIS014_Hw2/x64/Debug/CIS014_Hw2.tlog/link.read.1.tlog
-CIS014_Hw2/x64/Debug/vc142.idb
-CIS014_Hw2/x64/Debug/vc142.pdb
 CIS014_Hw2/.vs/CIS014_Hw2/v16/.suo
-CIS014_Hw2/.vs/CIS014_Hw2/v16/Browse.VC.db
-CIS014_Hw2/x64/Debug/CIS014_Hw2.exe
-CIS014_Hw2/x64/Debug/CIS014_Hw2.ilk
-CIS014_Hw2/x64/Debug/CIS014_Hw2.log
-CIS014_Hw2/x64/Debug/CIS014_Hw2.obj
-CIS014_Hw2/x64/Debug/CIS014_Hw2.pdb
-CIS014_Hw2/x64/Debug/vc142.idb
-CIS014_Hw2/x64/Debug/vc142.pdb
