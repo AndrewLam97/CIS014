@@ -1,7 +1,7 @@
 ﻿  CIS014_Hw2.cpp
-C:\Users\Andrew\Documents\School\PCC\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(29,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Andrew\Documents\School\PCC\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(30,22): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Andrew\Documents\School\PCC\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(32,19): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Andrew\Documents\School\PCC\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(33,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-  LINK : C:\Users\Andrew\Documents\School\PCC\CIS014\CIS014_Hw2\x64\Debug\CIS014_Hw2.exe not found or not built by the last incremental link; performing full link
-  CIS014_Hw2.vcxproj -> C:\Users\Andrew\Documents\School\PCC\CIS014\CIS014_Hw2\x64\Debug\CIS014_Hw2.exe
+C:\Users\Andrew\Documents\School\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(28,15): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrew\Documents\School\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(31,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\Documents\School\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(32,22): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\Documents\School\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(34,19): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew\Documents\School\CIS014\CIS014_Hw2\CIS014_Hw2.cpp(35,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+  CIS014_Hw2.vcxproj -> C:\Users\Andrew\Documents\School\CIS014\CIS014_Hw2\x64\Debug\CIS014_Hw2.exe
