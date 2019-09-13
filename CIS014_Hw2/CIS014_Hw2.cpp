@@ -25,6 +25,8 @@ string breakCash(int numPennies) {
 		numDimes = 0,
 		numNickels = 0;
 
+	float numCad = numPennies * 0.0133;
+
 	while (numPennies > 5) {
 		numDollars = floor(numPennies / 100);
 		numQuarters = floor((numPennies % 100) / 25);
@@ -35,8 +37,8 @@ string breakCash(int numPennies) {
 	}
 
 	//string result = "In US currency you have " + std::to_string(dollars) + " dollar(s), " + std::to_string(quarters) + " quarter(s), " + std::to_string(dimes) + " dime(s), " + std::to_string(nickels) + " nickel(s), and " + std::to_string(numPennies) + " pennies. \n";
-	char result[100];
-	sprintf_s(result, "In US currency you have: %d dollar(s), %d quarter(s), %d dime(s), %d nickel(s), and %d pennies. \n", numDollars, numQuarters, numDimes, numNickels, numPennies);
+	char result[150];
+	sprintf_s(result, "In US currency you have: %d dollar(s), %d quarter(s), %d dime(s), %d nickel(s), and %d pennies. \nIn CAD you have %.2f dollars. \n", numDollars, numQuarters, numDimes, numNickels, numPennies, numCad);
 
 	return result;
 
@@ -47,6 +49,5 @@ int main()
 	int numPennies = 0;
 	cout << "Please enter all your pennies: ";
 	cin >> numPennies;
-	cout << "You entered pennies";
 	cout << breakCash(numPennies);
 }
