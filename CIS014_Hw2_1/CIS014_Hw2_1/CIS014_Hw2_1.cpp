@@ -3,19 +3,18 @@
 *	Andrew Lam
 *	9-12-19
 *
-* NAME: currencySum
+* NAME: main
 * PURPOSE: A console application that takes the user's numeric input values for the following denominations: half-dollars, quarters, dimes, nickels, and pennies.
 * The application then outputs the total number of coins, their equivalency in pennies, and conversion to USD to two decimal places.
 * INPUTS:
-*     integers: number of each denomination
+*     integers: number of each coin denomination
 * RETURNS:
-*     string:  total number of coins, their equivalency in pennies, and conversion to USD to two decimal places
+*     cout string:  total number of coins, their equivalency in pennies, and conversion to USD to two decimal places
 */
 
 #include <iostream>
 using namespace std;
 #include <string>
-#include <math.h>
 
 int main()
 {
