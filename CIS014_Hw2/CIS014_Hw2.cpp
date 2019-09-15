@@ -38,7 +38,7 @@ string breakCash(int numPennies) { //breakCash function takes number of pennies 
 	}
 
 	char result[150]; //constructs string buffer for return
-	sprintf(result, "In US currency you have: %d dollars, %d quarters, %d dimes, %d nickels, and %d pennies. \nIn Canadian currency you have %.2f dollars. \n", numDollars, numQuarters, numDimes, numNickels, numPennies, numCad);
+	sprintf(result, "In US currency you have: %d dollars, %d quarters, %d dimes, %d nickels, and %d pennies. \nIn Canadian currency you have: %.2f dollars. \n", numDollars, numQuarters, numDimes, numNickels, numPennies, numCad);
 
 	return result;
 }
@@ -51,3 +51,10 @@ int main()
 	cout << breakCash(numPennies);
 	return 0;
 }
+
+/*
+TEST CASE
+Please enter all of your pennies: 123563
+In US currency you have: 1235 dollars, 2 quarters, 1 dimes, 0 nickels, and 3 pennies.
+In Canadian currency you have 1643.39 dollars.
+*/
