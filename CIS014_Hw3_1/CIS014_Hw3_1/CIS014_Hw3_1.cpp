@@ -9,7 +9,7 @@
 using namespace std;
 
 /*
- *  NAME: CAnIAlwaysWin
+ *  NAME: CanIAlwaysWin
  *	PURPOSE: This function determines whether it is possible to always win the game of nim given a starting n quantity of pebbles
  *	PARAMETERS: integer n containing the starting quantity of pebbles
  *	RETURN VALUES: bool true or false

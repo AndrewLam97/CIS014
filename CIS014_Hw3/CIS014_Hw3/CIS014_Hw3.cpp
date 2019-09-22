@@ -9,7 +9,6 @@
 #include <iostream>
 using namespace std;
 #include <string>
-#include <algorithm>
 
 /*
  *  NAME: separateLetters
@@ -39,13 +38,21 @@ string separateLetters(string input)
 	{
 		result += "b";
 	}
-	
+
 	return result;
 }
 
 int main()
 {
-	string testString = "aaababbaba"; //6a4b
-//	cout << testString << endl;
-	cout << bool(separateLetters(testString) == "aaaaaabbbb");
+	string testString = "abbbbbbbbaaaaaaa"; //sorted = aaaaaaaabbbbbbbb
+	cout << testString << endl;
+	cout << separateLetters(testString) << endl;
+	cout << "Sorted? " << bool(separateLetters(testString) == "aaaaaaaabbbbbbbb");
 }
+
+/*
+ *  TEST CASE
+ *  abbbbbbbbaaaaaaa
+ *	aaaaaaaabbbbbbbb
+ * 	Sorted? 1
+ */
