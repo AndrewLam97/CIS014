@@ -7,11 +7,53 @@
 // 
 
 #include <iostream>
+#include <vector>
 using namespace std;
+
+bool palindromeChecker(int input)
+{
+	vector<int> inputDigits;
+
+	if (input < 0)
+	{
+		return 0;
+	}
+	else if (input / 10 == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		while (input)
+		{
+			inputDigits.push_back(input % 10);
+			input /= 10;
+		}
+		reverse(inputDigits.begin(), inputDigits.end());
+
+		for (int i = 0; i < inputDigits.size(); i++)
+		{
+			if (inputDigits[i] != inputDigits[inputDigits.size() - i])
+			{
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+	}
+}
+
+int getShortestLength(int n)
+{
+	return 0;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int x = 123;
+	cout << palindromeChecker(x);
 }
 
 
