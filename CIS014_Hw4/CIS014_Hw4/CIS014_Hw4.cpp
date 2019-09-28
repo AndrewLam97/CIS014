@@ -12,8 +12,6 @@ using namespace std;
 
 bool palindromeChecker(int input)
 {
-	vector<int> inputDigits;
-
 	if (input < 0)
 	{
 		return 0;
@@ -24,36 +22,57 @@ bool palindromeChecker(int input)
 	}
 	else
 	{
-		while (input)
+		int reverseNum = 0, val = input;
+		while (input > 0)
 		{
-			inputDigits.push_back(input % 10);
-			input /= 10;
+			reverseNum = reverseNum * 10 + input % 10;
+			input = input / 10;
 		}
-		reverse(inputDigits.begin(), inputDigits.end());
-
-		for (int i = 0; i < inputDigits.size(); i++)
+		if (val == reverseNum)
 		{
-			if (inputDigits[i] != inputDigits[inputDigits.size() - i])
-			{
-				return 0;
-			}
-			else
-			{
-				return 1;
-			}
+			return 1;
+		}
+		else
+		{
+			return 0;
 		}
 	}
 }
 
 int getShortestLength(int n)
 {
+	if (palindromeChecker(n) == 1)
+	{
+		int numDigits = 0;
+		do
+		{
+			++numDigits;
+			n /= 10;
+		} while (n);
+		cout << "The shortest palindrome is " << numDigits;
+	}
 	return 0;
 }
 
 int main()
 {
-	int x = 123;
-	cout << palindromeChecker(x);
+	int n;
+	cout << "Enter integer: " << endl;
+	cin >> n;
+
+	getShortestLength(n);
+	/*
+	int x = -12;
+	cout << endl << palindromeChecker(x); //expect 0
+	x = 0;
+	cout << endl << palindromeChecker(x); //expect 1
+	x = 3;
+	cout << endl << palindromeChecker(x); //expect 1
+	x = 12321;
+	cout << endl << palindromeChecker(x); //expect 1
+	x = 1231;
+	cout << endl << palindromeChecker(x); //expect 0
+	*/
 }
 
 
