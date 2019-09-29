@@ -1,20 +1,69 @@
-// CIS014_Hw4_2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+/*
+Assignment #4.2
+DUE: 9-29-19
+PURPOSE: Iteratively sanitize all consecutive duplicates in a C++ string. Run as many iterations as needed until no consecutive duplicates remain.
+If the string is empty, return "Empty"
+*/
 #include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+/*
+PURPOSE: Sanitizes consecutive duplicates in a C++ string
+PARAMETERS: string
+RETURN VALUES: sanitized string or "Empty"
+*/
+string deduplicate(string input)
+{
+	vector<char> inputVector(input.begin(), input.end()); //create vector from string
+
+	while (true)
+	{
+		vector<char> origVector(inputVector); //create copy of vector to compare against
+
+		for (int i = 0; i < inputVector.size() - 1; i++) //iterate along vector 
+		{
+			if (inputVector.empty() == 1) //if empty vector, return "Empty" string
+			{
+				return "Empty";
+			}
+			if (inputVector[i] == inputVector[i + 1]) //if consecutive elements are identical, remove elements
+			{
+				inputVector.erase(inputVector.begin() + i);
+				inputVector.erase(inputVector.begin() + i);
+			}
+		}
+		if (origVector == inputVector) //if original vector and subsequent vector are the same, create and return string from vector
+		{
+			string str(inputVector.begin(), inputVector.end());
+
+			return str;
+		}
+	}
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    cout << deduplicate("ZZZAA");
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+/*
+TEST CASES
+INPUT: ACAABABABBA
+EXPECTED: ACBAB
+OUTPUT: ACBAB
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+INPUT: KCCK
+EXPECTED: Empty
+OUTPUT: Empty
+
+INPUT: KKCCD
+EXPECTED: D
+OUTPUT: D
+
+INPUT: ZZZAA
+EXPECTED: Z
+OUTPUT: Z
+*/
