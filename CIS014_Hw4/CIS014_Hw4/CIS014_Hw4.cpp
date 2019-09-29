@@ -1,17 +1,20 @@
-// CIS014_Hw4.cpp
-// Check if initial input is palindrome
-// Check from right to left for largest sub-palindrome
-// Find pivot point, check +/- around pivot
-// Find # of digits before largest sub palindrome * 2 + sub-palindrome length
-// If none, shortest possible is 2x-1
-// 
-
+/* 
+Assignment #4
+DUE: 9-29-19
+PURPOSE: Take any arbitrary number, n, and append zero (0) or more numeric digits at the end of it to obtain a palindrome. 
+The numeric palindrome should be the shortest, namely having the least number of digits, possible.
+Return the integral length of your shortest possible palindrome (NOT your new palindrome) per given input, n. For any non-palindrome n, the function returns 0.
+*/
 #include <iostream>
-#include <vector>
 #include <string>
 using namespace std;
 
-bool palindromeChecker(int input) //returns 1 if palindrome or single digit, 0 if negative or not palindrome
+/*
+PURPOSE: determines if integer is palindrome, single digit, negative, or not a palindrome
+PARAMETERS: integer
+RETURN VALUES: bool, true(1) if palindrome or single digit, false(0) if not palindrome or negative
+*/
+bool palindromeCheckerInt(int input)
 {
 	if (input < 0) //less than 0
 	{
@@ -40,9 +43,31 @@ bool palindromeChecker(int input) //returns 1 if palindrome or single digit, 0 i
 	}
 }
 
+/*
+PURPOSE: determines if string is palindrome
+PARAMETERS: string
+RETURN VALUES: bool, true if palindrome, false if not palindrome
+*/
+bool palindromeCheckerString(string s)
+{
+	if (equal(s.begin(), s.begin() + s.size() / 2, s.rbegin())) //compare first half to second half
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+/*
+PURPOSE: determines length of shortest possible palindrome
+PARAMETERS: integer
+RETURN VALUES: integer value of length of shortest possible palindrome
+*/
 int getShortestLength(int n)
 {
-	if (palindromeChecker(n) == 1) //if palindrome, calculate and return digits
+	if (palindromeCheckerInt(n) == 1) //if palindrome already, calculate and return digits
 	{
 		int numDigits = 0;
 		do
@@ -50,55 +75,35 @@ int getShortestLength(int n)
 			++numDigits;
 			n /= 10;
 		} while (n);
-		cout << "The shortest palindrome is " << numDigits;
 		return numDigits;
 	}
 
 	else if (n < 0) //return 0 for negative numbers
 	{
-		cout << "Negative number" << endl;
 		return 0;
 	}
 
 	else //subpalindrome finder 
 	{
-		string numString = to_string(n);
-		int pivot = 0;
+		string numString = to_string(n); //convert int to string
+		string numSubString = "";
 
-		cout << "Numstring length: " << numString.length() << endl;
-		/*		
-		for (int i = numString.length() - 1; i > 0; i--)
+		for (int i = 0; i < numString.length() - 1; i++) //iterate starting value along string
 		{
-			for (int j = 0; j < numString.length() - i; j++)
+			string numSubString = "";
+
+			for (int j = i; j < numString.length(); j++) //create substring of values right of starting value
 			{
-				cout << i << j << endl;
-				if (numString[i - j] != numString[i + j])
-				{
-					pivot = i;
-					cout << "Pivot index " << numString.length() - i << endl;
-					cout << "Size around " << j << endl;
-					break;
-				}
+				numSubString += numString[j];
+			}
+
+			if (palindromeCheckerString(numSubString) == 1) //evaluate if substring is palindrome
+			{
+				return (numString.length() - numSubString.length()) * 2 + numSubString.length(); //if yes, calculate resulting length
 			}
 		}
-		*/
-
-		for (int i = numString.length() - 2; i > numString.length() / 2; i--)
-		{
-			for (int j = 1; j < numString.length() - i; j++)
-			{
-				if (numString[i + j] != numString[i - j])
-				{
-					cout << "Pivot not found at i= " << i << " and size j= " << j << endl;
-				}
-				else
-				{
-					cout << "Pivot FOUND at pivot index i = " << i << " and size j = " << j << endl;
-				}
-			}
-		}
+		return 2 * numString.length() - 1; //if no subpalindromes
 	}
-
 	return 0;
 }
 
@@ -108,19 +113,29 @@ int main()
 	cout << "Enter integer: " << endl;
 	cin >> n;
 
-	getShortestLength(n);
-	/*
-	int x = -12;
-	cout << endl << palindromeChecker(x); //expect 0
-	x = 0;
-	cout << endl << palindromeChecker(x); //expect 1
-	x = 3;
-	cout << endl << palindromeChecker(x); //expect 1
-	x = 12321;
-	cout << endl << palindromeChecker(x); //expect 1
-	x = 1231;
-	cout << endl << palindromeChecker(x); //expect 0
-	*/
+	cout << "Shortest palindrome is length: " << getShortestLength(n) << endl;
+
 }
 
+/*
+TEST CASES
+Enter integer:
+-1
+Shortest palindrome is length: 0
 
+Enter integer:
+7
+Shortest palindrome is length: 1
+
+Enter integer:
+123454321
+Shortest palindrome is length: 9
+
+Enter integer:
+985737|589 expect 9
+Shortest palindrome is length: 9
+
+Enter integer:
+123456|54321 expect 11
+Shortest palindrome is length: 11
+*/

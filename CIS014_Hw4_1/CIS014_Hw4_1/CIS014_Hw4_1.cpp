@@ -1,4 +1,4 @@
-// CIS014_Hw4_1.cpp
+// CIS014_Hw4_1
 // Vector erase
 
 #include <iostream>
