@@ -8,25 +8,72 @@ Recommend the maximum profit an investor can make by placing at most one buy and
 #include <vector> 
 using namespace std;
 
-int getMaxProfit(vector<int>& prices);
+int getMaxProfit(vector<int> &prices);
 
 int main()
 {
-	vector<int> prices = { 4,1,2 };
+	vector<int> prices = { 2,9,1,4 };
 	cout << getMaxProfit(prices);
 }
 
-int getMaxProfit(vector<int>& prices)
+/*
+PURPOSE: Takes an integer vector consisting of stock prices in chronological order.
+Calculates the maximum profit possible by placing one buy and sell order
+PARAMETERS: integer vector prices 
+RETURN VALUES: integer of max possible profit
+*/
+int getMaxProfit(vector<int> &prices)
 {
-	int min = prices[0], max = 0, total = 0;
+	struct Stock {
+		int val;
+		int pos;
+	};
 
-	for (auto i : prices)
+	Stock min = { prices[0], 0 }, max = {0, 0}; //initialize min and max
+	int total = 0;
+
+	for (int i = 0; i < prices.size(); i++)
 	{
-		if (i < min) min = i;
-		else if (i > max) max = i;
+		if (prices[i] < min.val && max.pos <= i)
+		{
+			max = { 0,i }; //reset max if new min discovered (decreasing prices)
+			min.val = prices[i]; //set min
+			min.pos = i;
+		}
+		else if (prices[i] > max.val) //check current value against max
+		{
+			max.val = prices[i];
+			max.pos = i;
+		}
+		if (min.pos < max.pos) //check min and max positions
+		{
+			if(max.val - min.val > total) //calculate new total
+				total = max.val - min.val;
+		}
 	}
-	total = max - min;
-	if (total < 0) total = 0;
-
 	return total;
 }
+
+/*
+TEST CASES
+vector<int> prices = { 3,1,2,4 };
+3
+
+vector<int> prices = { 2,8,1,5 };
+6
+
+vector<int> prices = { 1 };
+0
+
+vector<int> prices = { 1,2,99,1 };
+98
+
+vector<int> prices = { 4,2,1 };
+0
+
+vector<int> prices = { 3,1,5,2,4 };
+4
+
+vector<int> prices = { 9,2,5,1,6 };
+5
+*/
