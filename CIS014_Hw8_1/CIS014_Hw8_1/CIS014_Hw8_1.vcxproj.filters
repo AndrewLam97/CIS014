@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CIS014_Hw8.3ExtraCredit.cpp">
+    <ClCompile Include="CIS014_Hw8_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

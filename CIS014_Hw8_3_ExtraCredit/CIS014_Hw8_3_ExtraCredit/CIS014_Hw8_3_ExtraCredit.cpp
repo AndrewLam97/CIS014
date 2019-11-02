@@ -51,7 +51,7 @@ int main()
 	int total = 9;
 	int size = sizeof(arr) / sizeof(arr[0]);
 	cout << count(arr, size, total) << endl;
-	if(f == 0)
+	if (f == 0)
 	{
 		cout << "No operation performed, actually 0" << endl;
 	}

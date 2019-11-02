@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{97F687C7-36EA-42DB-A774-F3690BC1213F}</ProjectGuid>
+    <ProjectGuid>{6B52E66F-C058-4FEE-B91D-8B48E5D19396}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CIS014Hw83ExtraCredit</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -151,7 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CIS014_Hw8.3ExtraCredit.cpp" />
+    <ClCompile Include="CIS014_Hw8_3_ExtraCredit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
