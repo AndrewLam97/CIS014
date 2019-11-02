@@ -1,11 +1,30 @@
 // Recursive C program for 
 // coin change problem. 
 #include <iostream>
+#include <vector>
 using namespace std;
 bool f = false;
 
 
-//int getLegoCombinations(vector<int>& lego_heights, int target_height) {}
+int getLegoCombinations(vector<int>& lego_heights, int target_height) {
+	/*if (lego_heights.size() == 1)
+	{
+		if (target_height % lego_heights[0] == 0)
+		{
+			return 1;
+		}
+		else
+			return 0;
+	}*/
+	if (target_height == 0)
+		return 1;
+	if (target_height < 0)
+		return 0;
+	if (lego_heights.size() <= 0 && target_height >= 1)
+		return 0;
+
+	return getLegoCombinations(lego_heights, target_height) + getLegoCombinations(lego_heights, target_height - lego_heights[lego_heights.size() - 1]);
+}
 
 
 // Returns the count of ways we can  
@@ -20,7 +39,6 @@ int count(int arr[], int size, int total)
 		}
 		else
 			return 0;
-
 	}
 	// If n is 0 then there is 1 solution  
 	// (do not include any coin) 
@@ -46,15 +64,18 @@ int count(int arr[], int size, int total)
 // Driver program to test above function 
 int main()
 {
-	int i, j;
-	int arr[] = { 5 };
-	int total = 9;
-	int size = sizeof(arr) / sizeof(arr[0]);
+	int arr[] = { 1,2,5 };
+	vector<int> lego_heights = { 1,2,5 };
+	cout << lego_heights.size();
+	int total = 8;
+	/*int size = sizeof(arr) / sizeof(arr[0]);
 	cout << count(arr, size, total) << endl;
 	if (f == 0)
 	{
 		cout << "No operation performed, actually 0" << endl;
-	}
+	}*/
+
+	cout << getLegoCombinations(lego_heights, total);
 
 	return 0;
 }
