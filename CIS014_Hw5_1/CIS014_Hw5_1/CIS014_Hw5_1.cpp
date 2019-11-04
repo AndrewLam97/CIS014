@@ -73,8 +73,8 @@ int compareVersions(string ver1, string ver2)
 
 int main()
 {
-	string str1 = "0.4.1.2.1";
-	string str2 = ".4.1.2.";
+	string str1 = ".9";
+	string str2 = ".9.1";
 	cout << "str1: " << str1 << endl;
 	cout << "str2: " << str2 << endl;
 	cout << "Version compare returned: " << compareVersions(str1, str2) << endl;
