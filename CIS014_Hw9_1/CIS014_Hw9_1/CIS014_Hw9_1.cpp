@@ -1,3 +1,9 @@
+/*
+Assignment 9.1
+Due: 11/10/19
+Purpose: Class to automatically determine whether a set of mailbox signs (or street addresses) is possible given your available plastic letter inventory in the store. 
+*/
+
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -6,8 +12,6 @@ using namespace std;
 class CIS14 {
 public:
 	int getNumPossibleSigns(string* letterInventory, string* addresses, int length);
-private:
-	
 };
 
 /**
