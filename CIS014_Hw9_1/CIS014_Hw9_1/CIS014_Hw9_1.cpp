@@ -61,7 +61,7 @@ int CIS14::getNumPossibleSigns(string* letterInventory, string* addresses, int l
 
 int main()
 {
-	string letterInventory = "99S9ABCDAAST";
+	string letterInventory = "ABCDAAST";
 	string addresses[] = { "999 S ST", "A BAD ST", "B BAD ST" };
 	int length = sizeof(addresses) / sizeof(addresses[0]);
 
