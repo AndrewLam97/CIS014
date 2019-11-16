@@ -1,20 +1,41 @@
-// CIS014_Hw10_2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
+
+class Node {
+public:
+	int value;  //payload
+	Node* next; //pointer to next node
+	Node(int v) : value(v), next(nullptr) {} //constructor
+};
+
+class CIS14 {
+public:
+	Node* getClosestCommonWaypoint(Node* A, Node* B);
+};
+
+Node* CIS14::getClosestCommonWaypoint(Node* A, Node* B)
+{
+	Node* tmp = A;
+	Node* tmp1 = B;
+	while (tmp->next != nullptr)
+	{
+		while (tmp1->next != nullptr)
+		{
+
+			tmp1 = tmp1->next;
+		}
+		tmp = tmp->next;
+	}
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	CIS14 cis14;
+
+	Node a(10), a1(11), a2(12), a3(13), a4(14), b1(21), b2(22), c1(31), c2(32);
+	a.next = &a1; a1.next = &a2; a2.next = &a3; a3.next = &a4; a4.next = &c1;
+	b1.next = &b2; b2.next = &c1;
+	c1.next = &c2;
+
+	cout << (&c1 == cis14.getClosestCommonWaypoint(&a, &b1));
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
