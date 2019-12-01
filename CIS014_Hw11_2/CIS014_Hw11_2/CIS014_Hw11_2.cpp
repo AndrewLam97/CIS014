@@ -12,7 +12,7 @@ int getMaxPond(int* arr, int size);
 
 int main()
 {
-	int arr[] = { 1,99,1 };
+	int arr[] = { 22,31,1,23 };
 	int size = sizeof(arr) / sizeof(arr[0]);
 
 	cout << getMaxPond(arr, size);
@@ -27,12 +27,12 @@ Return Values: integer of max cross sectional area
 int getMaxPond(int* arr, int size)
 {
 	int maxArea = 0;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size; i++) //iterate starting point through array
 	{
-		for (int j = size - 1; j >= i; j--)
+		for (int j = size - 1; j >= i; j--) //iterate end point back through array
 		{
-			int temp = (j - i) * min(arr[i], arr[j]);
-			if (temp > maxArea)
+			int temp = (j - i) * min(arr[i], arr[j]); //calculate temp area between both points
+			if (temp > maxArea) //if temp area larger than stored area, update stored area
 				maxArea = temp;
 		}
 	}
