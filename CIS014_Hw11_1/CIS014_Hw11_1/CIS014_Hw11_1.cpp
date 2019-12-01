@@ -12,7 +12,7 @@ int getTotalWaterAmount(int* arr, int size);
 
 int main()
 {
-	int arr[] = { 0,1,2,5,4,2,6,4,3,2,1,1,1,1,1,1,8 };
+	int arr[] = { 1,2,3,4,5,6,5,4,3,6,22,3,2 };
 	int size = sizeof(arr) / sizeof(arr[0]);
 
 	cout << getTotalWaterAmount(arr, size);
@@ -26,38 +26,37 @@ RETURN VALUES: integer of units of water retained by the terrain
 */
 int getTotalWaterAmount(int* arr, int size)
 {
-	//int total = 0;
-	//for (int i = 1; i < size - 1; i++) { //iterate middle point through array 
-
-	//	int left = arr[i]; //find peak on left
-	//	for (int j = 0; j < i; j++)
-	//	{
-	//		left = max(left, arr[j]);
-	//	}
-
-	//	int right = arr[i]; //find peak on right
-	//	for (int j = i + 1; j < size; j++)
-	//	{
-	//		right = max(right, arr[j]);
-	//	}
-	//	total = total + (min(left, right) - arr[i]);
-	//}
-	//return total;
 	int total = 0;
 	for (int i = 1; i < size - 1; i++) { //iterate middle point through array 
 
-		int left = arr[i]; //find peak on left
+		int leftPeak = arr[i]; //find peak on left
 		for (int j = 0; j < i; j++)
 		{
-			left = max(arr[i], arr[j]);
+			leftPeak = max(leftPeak, arr[j]); //find find subpeak
 		}
 
-		int right = arr[i]; //find peak on right
+		int rightPeak = arr[i]; //find peak on right
 		for (int j = i + 1; j < size; j++)
 		{
-			right = max(right, arr[j]);
+			rightPeak = max(rightPeak, arr[j]); //find subpeak
 		}
-		total = total + (min(left, right) - arr[i]);
+		total += (min(leftPeak, rightPeak) - arr[i]);
 	}
 	return total;
 }
+
+/*
+TEST CASES:
+
+input: 5,2,1,3,1,5
+output: 13
+
+input: 5,4,1,2
+ouput: 1
+
+input: 0,1,2,5,4,2,6,4,3,2,1,1,1,1,1,1,8
+output: 43
+
+input: 1,2,3,4,5,6,5,4,3,6,22,3,2
+output: 6
+*/
