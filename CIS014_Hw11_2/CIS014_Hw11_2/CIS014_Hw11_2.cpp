@@ -12,7 +12,7 @@ int getMaxPond(int* arr, int size);
 
 int main()
 {
-	int arr[] = { 22,31,1,23 };
+	int arr[] = { 1,99,1 };
 	int size = sizeof(arr) / sizeof(arr[0]);
 
 	cout << getMaxPond(arr, size);
@@ -38,3 +38,16 @@ int getMaxPond(int* arr, int size)
 	}
 	return maxArea;
 }
+
+/*
+Test Cases:
+
+input: 22,31,1,23
+output: 66
+
+input: 1,3,5
+output: 3
+
+input: 1,99,1
+output: 2
+*/
