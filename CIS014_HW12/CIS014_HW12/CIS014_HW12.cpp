@@ -1,8 +1,22 @@
+/*
+Assignment #12
+Due: 12/8/19
+Purpose: function that takes in a R x C vector (namely, a vector of vectors)
+		 representing your terrain map, where R > 0 and C > 0, and outputs the 
+		 total amount of water retention in that given map
+*/
 #include <iostream>
 #include <vector>
 #include <queue>
 using namespace std;
 
+/*
+Purpose: function that takes in a R x C vector (namely, a vector of vectors)
+		 representing your terrain map, where R > 0 and C > 0, and outputs the 
+		 total amount of water retention in that given map
+Parameters: 2D vector (vector of vectors) of integers
+Return Values: integer of units of water retained by the terrain
+*/
 int getTotalWaterAmount(vector<vector<int>>& map)
 {
 typedef pair<int, int> cell;
